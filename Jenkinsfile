@@ -77,7 +77,7 @@ pipeline {
             steps {
                 sh """
                     mkdir -p dist
-                    tar --exclude='*/__pycache__' -czf dist/python-app.tar.gz src requirements.txt
+                    tar --exclude='*/__pycache__' -czf dist/python-app.tar.gz src requirements.txt run.sh
                 """
                 archiveArtifacts artifacts: 'dist/python-app.tar.gz', fingerprint: true
             }
